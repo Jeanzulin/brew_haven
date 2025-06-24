@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Standard SEO meta tags -->
+  <meta name="description"
+    content="Brew Haven is your handcrafted coffee destination. Explore freshly roasted lattes, cappuccinos, and more — all brewed with passion.">
+  <meta name="keywords"
+    content="coffee, Brew Haven, latte, cappuccino, handcrafted coffee, espresso, americano, coffee shop, online coffee store">
+  <meta name="author" content="Brew Haven Team">
+  <meta name="viewport" content="width=1280">
+
+  <!-- Open Graph (for social media) -->
+  <meta property="og:title" content="Brew Haven | Your Handcrafted Coffee Haven" />
+  <meta property="og:description"
+    content="Discover Brew Haven's artisan coffee — from lattes to flat whites, brewed to perfection." />
+  <meta property="og:image" content="images/preview.jpg" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brew Haven | Artisan Coffee Online" />
+  <meta name="twitter:description" content="Taste the difference. Shop handcrafted coffee at Brew Haven." />
+  <meta name="twitter:image" content="images/preview.jpg" />
+
+  <title>Brew Haven | Handcrafted Coffee to Brighten Your Day</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo"><img src="images/logo.png" alt=""></div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Our Coffee</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="theme-switch">
+            <span>Light</span>
+            <label class="switch">
+              <input type="checkbox" id="themeToggle" />
+              <span class="slider round"></span>
+            </label>
+            <span>Dark</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Brew Haven</h1>
+      <p>Your daily dose of handcrafted coffee, brewed with love.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <section id="about">
+      <h2>About Brew Haven</h2>
+      <p>At Brew Haven, coffee is more than a drink. Nestled in the heart of our community, we take pride
+        in roasting each batch of coffee beans by hand, ensuring rich, full-bodied flavor in every cup. Our hand-baked
+        beans are carefully selected and roasted in small batches to highlight their unique origin and character.
+        Whether you're a seasoned coffee enthusiast or simply looking for a warm, comforting brew, Brew Haven is your
+        haven for authenticity, quality, and a deeper coffee experience.</p>
+    </section>
+
+    <section id="shopSection" class="shop-container">
+      <!-- LEFT: Product List -->
+      <div class="product-list">
+        <h2>Our Coffees</h2>
+        <div class="product-grid">
+          <!-- Each product card -->
+          <div class="product-card">
+            <img src="images/latte.jpeg" alt="Latte">
+            <h3>Latte</h3>
+            <p>$4.5</p>
+            <button class="add-btn" data-id="1" data-name="Latte" data-price="4.5">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="images/cappuccino.jpeg" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>$6.3</p>
+            <button class="add-btn" data-id="3" data-name="Cappuccino" data-price="6.3">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="images/americano.jpg" alt="Americano">
+            <h3>Americano</h3>
+            <p>$5</p>
+            <button class="add-btn" data-id="4" data-name="Americano" data-price="5">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="images/americano.jpg" alt="Americano">
+            <h3>Americano</h3>
+            <p>$5</p>
+            <button class="add-btn" data-id="4" data-name="Americano" data-price="5">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="images/Flatwhite.jpg" alt="Flatwhite">
+            <h3>Flatwhite</h3>
+            <p>$5.5</p>
+            <button class="add-btn" data-id="5" data-name="Flatwhite" data-price="5.5">Add to Cart</button>
+          </div>
+          <!-- Add more product cards here -->
+        </div>
+      </div>
+
+      <!-- RIGHT: Shopping Cart -->
+      <div id="cartSidebar" class="cart-section">
+        <div class="sidebar-header">
+          <h2>Shopping Cart</h2>
+        </div>
+        <div id="cartList"></div>
+        <div id="emptyCartMessage" class="empty-message">🛒 Your cart is empty.</div>
+        <div id="cartBreakdown">
+          <p>Subtotal: $<span id="subtotal">0.00</span></p>
+          <p>Tax (8%): $<span id="tax">0.00</span></p>
+          <p>Shipping: $<span id="shipping">5.00</span></p>
+        </div>
+        <div id="cartTotal">Total: $0</div>
+        <button id="checkoutBtn">Checkout</button>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-image">
+          <img src="images/cafe.jpg" alt="Contact Us">
+        </div>
+        <form id="contactForm" novalidate>
+          <label for="name">Full Name*</label>
+          <input type="text" id="name" name="name" required>
+          <div class="error" id="nameError"></div>
+
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone">
+          <div class="error" id="phoneError"></div>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+          <div class="error" id="emailError"></div>
+
+          <label for="comments">Comments*</label>
+          <textarea id="comments" name="comments" required></textarea>
+          <div class="error" id="commentsError"></div>
+
+          <fieldset>
+            <legend>Preferred Contact Method*</legend>
+            <label><input type="radio" name="contactPref" value="phone"> Phone</label>
+            <label><input type="radio" name="contactPref" value="email"> Email</label>
+            <div class="error" id="prefError"></div>
+          </fieldset>
+
+          <button type="submit">Submit</button>
+          <div id="formMessages"></div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Brew Haven Coffee</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="images/facebook-icon.jpg" alt="Facebook" />
+        </a>
+        <a href="mailto:contact@brewhaven.com" aria-label="Email">
+          <img src="images/email-icon.png" alt="Email" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+
+<script src="script.js" defer></script>
+
+</html>
